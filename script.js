@@ -37,9 +37,14 @@ function searchError() {
 }
 
 function displayData(weather) {
-    document.getElementById("loc").innerHTML = weather.location.name + "<br>" + weather.location.region;
-    document.getElementById("temp").innerText = weather.current.temp_c + "°C";
+    document.getElementById("bigBox").style.animation = "fade 1s";
+    setTimeout(() => {
+        document.getElementById("bigBox").style.animation = "none";
+    }, 1000);   
+    document.getElementById("locBox").innerHTML = "<img src=\"icons/loc.png\" id=\"iconLoc\"><div id=\"loc\">" + weather.location.name + ", " + (weather.location.region == '' ? "N/A" : weather.location.region) + ", " + weather.location.country + "</div>";
+    document.getElementById("temp").innerText = (weather.current.temp_c + " °C").replace(".", ",");
     document.getElementById("iconTemp").setAttribute("src", "http:" + weather.current.condition.icon.replace("64x64", "128x128"));
-    document.getElementById("wind").innerText = weather.current.wind_kph + " km/h";
-    document.getElementById("hum").innerText = weather.current.humidity + " %";
+    document.getElementById("wind").innerText = (weather.current.wind_kph + " km/h").replace(".", ",");
+    document.getElementById("hum").innerText = (weather.current.humidity + " %").replace(".", ",");
+    document.getElementById("prec").innerText = (weather.current.precip_mm + " mm").replace(".", ",");
 }
