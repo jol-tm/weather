@@ -1,5 +1,3 @@
-navigator.geolocation.getCurrentPosition(getPos, getDefaultWeather);
-
 document.getElementById("inputBtn").addEventListener("click", getInputWeather);
 
 function getPos(pos) {
@@ -48,3 +46,29 @@ function displayData(weather) {
     document.getElementById("hum").innerText = (weather.current.humidity + " %").replace(".", ",");
     document.getElementById("prec").innerText = (weather.current.precip_mm + " mm").replace(".", ",");
 }
+
+function warn() {
+    let warn = `    
+        <div id="warn">
+            <div>
+                Essa aplicação pode coletar dados da sua localização com sua permissão para informar o clima na sua região por meio da <a href="https://www.weatherapi.com/">Weather API</a>, entretando, nenhum dado é retido pela aplicação. Você também pode optar por apenas pesquisar uma cidade.
+            </div>
+            <button id="warnBtn">Ok</button>
+        </div>`;
+    if (localStorage.getItem("warned") == null) {
+        document.body.innerHTML += warn;
+        document.getElementById("warnBtn").addEventListener("click", closeWarn);
+    } else {
+        navigator.geolocation.getCurrentPosition(getPos);
+    }
+    
+}
+
+function closeWarn() {
+    document.getElementById("warn").remove();
+    navigator.geolocation.getCurrentPosition(getPos);
+    localStorage.setItem("warned", true);
+}
+
+getDefaultWeather();
+warn();
