@@ -67,10 +67,10 @@ img:not(#iconTemp) {
 }
 
 #input {
-    width: 35%;
+    width: 10rem;
 }
 #input:not(:placeholder-shown), #input:hover, #input:focus {
-    width: 19rem;
+    width: 15rem;
 }
 
 #inputBtn:hover {
