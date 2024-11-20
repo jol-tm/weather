@@ -82,6 +82,7 @@ img:not(#iconTemp) {
 .notf {
     position: fixed;
     top: -5rem;
+    width: fit-content;
     padding: 1rem;
     background-color: lightskyblue;
     border-radius: 1rem;
@@ -90,13 +91,13 @@ img:not(#iconTemp) {
 
 @keyframes showUp {
     0% {
-        top: -5rem;
+        top: -10rem;
     } 25% {
         top: 2rem;
     } 75% {
         top: 2rem;
     } 100% {
-        top: -5rem;
+        top: -10rem;
     }
 }
 
