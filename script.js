@@ -7,21 +7,21 @@ function getPos(pos) {
 }
 
 async function getWeather(loc) {
-    await fetch(`http://api.weatherapi.com/v1/current.json?key=60bc11723913419aaa5165955241911&q=${loc}&aqi=no`)
+    await fetch(`https://api.weatherapi.com/v1/current.json?key=60bc11723913419aaa5165955241911&q=${loc}&aqi=no`)
         .then(Response => Response.json())
         .then(displayData);
 }
 
 async function getInputWeather() {
     let city = document.getElementById("input").value;
-    await fetch(`http://api.weatherapi.com/v1/current.json?key=60bc11723913419aaa5165955241911&q=${city}&aqi=no`)
+    await fetch(`https://api.weatherapi.com/v1/current.json?key=60bc11723913419aaa5165955241911&q=${city}&aqi=no`)
         .then(Response => Response.json())
         .then(displayData)
         .catch(searchError);
 }
 
 async function getDefaultWeather() {
-    await fetch(`http://api.weatherapi.com/v1/current.json?key=60bc11723913419aaa5165955241911&q=London&aqi=no`)
+    await fetch(`https://api.weatherapi.com/v1/current.json?key=60bc11723913419aaa5165955241911&q=London&aqi=no`)
         .then(Response => Response.json())
         .then(displayData);
 }
