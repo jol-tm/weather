@@ -22,6 +22,7 @@ body {
     align-items: center;
     flex-direction: column;
     text-align: center;
+    background-color: lightskyblue;
     height: 100vh;
     margin: 0;
 }
@@ -65,8 +66,7 @@ h1 {
     flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem;
-    border: 2px solid lightskyblue;
-    box-shadow: 0 0 1rem lightskyblue;
+    background-color: rgb(210, 235, 255);
     border-radius: 1rem;
 }
 
@@ -107,7 +107,6 @@ img:not(#iconTemp, #iconInput) {
     outline: none;
     background-color: transparent;
     border: 2px solid lightskyblue;
-    box-shadow: 0 0 .5rem lightskyblue;
     border-radius: .5rem;
     transition: .3s;
 }
@@ -126,12 +125,13 @@ img:not(#iconTemp, #iconInput) {
 
 #input:not(:placeholder-shown), #input:hover, #input:focus {
     width: 15rem;
+    box-shadow: 0 0 .5rem lightskyblue;
 }
 
 #inputBtn:hover {
     cursor: pointer;
     background-color: lightskyblue;
-    /* transform: translateY(-2px); */
+    box-shadow: 0 0 .5rem lightskyblue;
 }
 
 .notf {
